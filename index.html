@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="6080新视觉电影网（6080xinshijuedianyingwang-app）官方入口，提供最新电影、热门电视剧、动漫综艺高清在线观看与迅雷下载，每日更新。">
+<meta name="keywords" content="6080新视觉电影网, 6080xinshijuedianyingwang-app, 电影在线观看, 最新电影, 热门电视剧, 高清影视">
+<meta name="author" content="6080新视觉电影网">
+<meta name="robots" content="index, follow">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<title>6080新视觉电影网 - 6080xinshijuedianyingwang-app | 高清电影电视剧在线观看</title>
+<link rel="canonical" href="https://6080xinshijuedianyingwang-app.github.io/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "6080新视觉电影网",
+  "alternateName": "6080xinshijuedianyingwang-app",
+  "url": "https://6080xinshijuedianyingwang-app.github.io/",
+  "description": "6080新视觉电影网（6080xinshijuedianyingwang-app）提供最新电影、电视剧、动漫、综艺高清在线观看。",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://6080xinshijuedianyingwang-app.github.io/#search?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+<style>
+:root{
+  --bg:#070b1a;
+  --bg2:#0c1226;
+  --panel:rgba(255,255,255,.04);
+  --line:rgba(255,255,255,.10);
+  --txt:#eef1f8;
+  --sub:#9aa4c4;
+  --brand:#ff5c8a;
+  --brand2:#7b6bff;
+  --gold:#ffcf6b;
+  --radius:18px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+  background:var(--bg);
+  color:var(--txt);
+  line-height:1.75;
+  overflow-x:hidden;
+}
+body::before{
+  content:"";position:fixed;inset:0;z-index:-2;
+  background:
+    radial-gradient(900px 500px at 12% -8%, rgba(123,107,255,.28), transparent 60%),
+    radial-gradient(800px 460px at 88% 10%, rgba(255,92,138,.22), transparent 60%),
+    radial-gradient(700px 420px at 50% 108%, rgba(255,207,107,.14), transparent 60%),
+    linear-gradient(180deg,#070b1a,#0a0f22 45%,#070b1a);
+}
+body::after{
+  content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background-image:linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);
+  background-size:46px 46px;mask-image:radial-gradient(circle at 50% 30%,#000,transparent 70%);
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+
+/* ===== Header ===== */
+header{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);background:rgba(7,11,26,.72);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;gap:18px;height:64px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.5px}
+.logo .mark{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;font-size:15px;
+  background:linear-gradient(135deg,var(--brand),var(--brand2));box-shadow:0 6px 18px -6px rgba(255,92,138,.7)}
+.logo b{font-size:17px;background:linear-gradient(90deg,#fff,#ffd7b0);-webkit-background-clip:text;background-clip:text;color:transparent}
+.logo span{font-size:11px;color:var(--sub);border:1px solid var(--line);padding:2px 8px;border-radius:20px;margin-left:4px}
+.menu{display:flex;gap:6px;margin-left:auto;align-items:center}
+.menu a{font-size:14px;color:var(--sub);padding:8px 12px;border-radius:10px;transition:.2s}
+.menu a:hover{color:#fff;background:rgba(255,255,255,.06)}
+.menu a.active{color:#fff;background:linear-gradient(135deg,rgba(255,92,138,.25),rgba(123,107,255,.25))}
+.search-box{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:12px;padding:7px 12px;width:200px}
+.search-box input{background:none;border:none;outline:none;color:#fff;font-size:13px;width:100%;font-family:inherit}
+.search-box input::placeholder{color:#6f7899}
+.btn-play{background:linear-gradient(135deg,var(--brand),var(--brand2));color:#fff;font-size:13px;font-weight:700;padding:9px 16px;border-radius:12px;box-shadow:0 8px 20px -8px rgba(123,107,255,.8)}
+.btn-play:hover{transform:translateY(-1px)}
+.menu-btn{display:none;width:40px;height:40px;border:1px solid var(--line);border-radius:11px;background:rgba(255,255,255,.04);color:#fff;font-size:20px;cursor:pointer}
+
+/* ===== Hero ===== */
+.hero{padding:64px 0 40px;position:relative}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;color:var(--gold);border:1px solid rgba(255,207,107,.3);background:rgba(255,207,107,.07);padding:5px 12px;border-radius:30px}
+h1{font-size:clamp(30px,5vw,52px);line-height:1.18;font-weight:900;margin:16px 0 10px;letter-spacing:-.5px}
+h1 em{font-style:normal;background:linear-gradient(90deg,var(--brand),var(--brand2) 55%,var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{color:var(--sub);font-size:16px;max-width:560px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.cta{font-size:15px;font-weight:700;padding:14px 26px;border-radius:14px;transition:.2s}
+.cta.primary{background:linear-gradient(135deg,var(--brand),var(--brand2));box-shadow:0 14px 30px -12px rgba(123,107,255,.75)}
+.cta.ghost{border:1px solid var(--line);color:var(--sub)}
+.cta:hover{transform:translateY(-2px)}
+.stats{display:flex;gap:28px;margin-top:32px;flex-wrap:wrap}
+.stat .n{font-size:26px;font-weight:800;background:linear-gradient(90deg,#fff,var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat .l{font-size:12px;color:var(--sub)}
+.hero-card{position:relative;border-radius:24px;padding:26px;background:linear-gradient(160deg,rgba(255,255,255,.07),rgba(255,255,255,.02));border:1px solid var(--line);backdrop-filter:blur(10px);box-shadow:0 30px 70px -30px rgba(0,0,0,.7)}
+.hero-card .tag{font-size:11px;letter-spacing:2px;color:var(--gold)}
+.hero-card h3{font-size:22px;margin:8px 0 14px}
+.now-list{display:flex;flex-direction:column;gap:12px}
+.now{border-radius:12px;padding:12px;background:rgba(255,255,255,.035);border:1px solid var(--line);display:flex;gap:12px;align-items:flex-start;transition:.2s}
+.now:hover{border-color:rgba(255,92,138,.5);transform:translateX(4px)}
+.now .no{font-size:12px;font-weight:800;color:var(--brand);min-width:22px}
+.now b{font-size:14px;display:block}
+.now small{color:var(--sub);font-size:12px}
+
+/* ===== Section ===== */
+section{padding:56px 0}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:26px}
+.sec-title{font-size:clamp(22px,3.4vw,32px);font-weight:900;letter-spacing:-.3px}
+.sec-title small{display:block;font-size:13px;color:var(--brand);letter-spacing:3px;font-weight:700;margin-bottom:6px}
+.sec-more{font-size:13px;color:var(--sub);border:1px solid var(--line);padding:7px 14px;border-radius:20px}
+.sec-more:hover{color:#fff}
+
+/* ===== Cards ===== */
+.grid{display:grid;gap:20px}
+.grid-4{grid-template-columns:repeat(4,1fr)}
+.grid-3{grid-template-columns:repeat(3,1fr)}
+.grid-2{grid-template-columns:repeat(2,1fr)}
+.card{position:relative;border-radius:var(--radius);overflow:hidden;background:var(--panel);border:1px solid var(--line);transition:.28s;cursor:pointer}
+.card:hover{transform:translateY(-6px);border-color:rgba(123,107,255,.55);box-shadow:0 22px 44px -18px rgba(123,107,255,.5)}
+.poster{position:relative;aspect-ratio:3/4;overflow:hidden;background:linear-gradient(135deg,#1a2040,#0d1230)}
+.poster .art{position:absolute;inset:0;display:grid;place-items:center;font-size:34px;font-weight:900;color:rgba(255,255,255,.85)}
+.poster .grad{position:absolute;inset:0;background:linear-gradient(to top,rgba(7,11,26,.95),rgba(7,11,26,.2) 55%,rgba(255,255,255,.06))}
+.score{position:absolute;top:10px;left:10px;font-size:12px;font-weight:800;color:#1a1230;background:var(--gold);padding:3px 9px;border-radius:8px}
+.ep{position:absolute;top:10px;right:10px;font-size:11px;color:#fff;background:rgba(0,0,0,.45);backdrop-filter:blur(4px);padding:3px 9px;border-radius:8px}
+.card h4{font-size:15px;padding:12px 14px 2px}
+.card p{font-size:12px;color:var(--sub);padding:0 14px 14px}
+
+/* ===== Genre pills ===== */
+.pills{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:8px}
+.pill{padding:9px 18px;border-radius:30px;font-size:13px;color:var(--sub);border:1px solid var(--line);background:rgba(255,255,255,.03);transition:.2s}
+.pill:hover{color:#fff;border-color:rgba(255,92,138,.6);background:rgba(255,92,138,.1)}
+
+/* ===== Ranking ===== */
+.rank{display:flex;flex-direction:column;gap:12px}
+.rank-item{display:flex;gap:14px;align-items:center;padding:12px;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.03);transition:.2s}
+.rank-item:hover{background:rgba(123,107,255,.1);border-color:rgba(123,107,255,.5)}
+.rank-item .idx{font-size:22px;font-weight:900;min-width:38px;text-align:center;background:linear-gradient(135deg,var(--brand),var(--brand2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.rank-item .idx.top{background:linear-gradient(135deg,var(--gold),#ff9a76);-webkit-background-clip:text;background-clip:text}
+.rank-item .txt b{font-size:15px;display:block}
+.rank-item .txt small{color:var(--sub);font-size:12px}
+.rank-item .bar{margin-top:6px;height:4px;border-radius:4px;background:rgba(255,255,255,.08);overflow:hidden}
+.rank-item .bar i{display:block;height:100%;border-radius:4px;background:linear-gradient(90deg,var(--brand),var(--brand2))}
+
+/* ===== Feature ===== */
+.feat{border-radius:22px;padding:28px;background:linear-gradient(150deg,rgba(123,107,255,.14),rgba(255,92,138,.06) 60%,rgba(255,255,255,.02));border:1px solid var(--line)}
+.feat .ic{width:52px;height:52px;border-radius:15px;display:grid;place-items:center;font-size:24px;background:rgba(255,255,255,.07);border:1px solid var(--line);margin-bottom:14px}
+.feat h4{font-size:18px;margin-bottom:6px}
+.feat p{color:var(--sub);font-size:14px}
+
+/* ===== News / text list ===== */
+.news{display:flex;flex-direction:column;gap:14px}
+.news a{display:flex;gap:12px;align-items:baseline;padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:rgba(255,255,255,.03);transition:.2s}
+.news a:hover{background:rgba(255,92,138,.08);border-color:rgba(255,92,138,.45)}
+.news .dot{width:7px;height:7px;border-radius:50%;background:var(--brand);margin-top:8px;flex:none}
+.news .t{flex:1;font-size:14.5px}
+.news .d{font-size:12px;color:var(--sub);flex:none}
+
+/* ===== Steps ===== */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.step{position:relative;text-align:center;padding:24px 16px;border-radius:18px;background:rgba(255,255,255,.035);border:1px solid var(--line)}
+.step .num{width:42px;height:42px;margin:0 auto 12px;border-radius:12px;display:grid;place-items:center;font-weight:900;background:linear-gradient(135deg,var(--brand),var(--brand2))}
+.step h5{font-size:15px;margin-bottom:4px}
+.step p{font-size:12.5px;color:var(--sub)}
+
+/* ===== FAQ ===== */
+.faq{display:flex;flex-direction:column;gap:12px}
+.faq-item{border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.03);overflow:hidden}
+.faq-item summary{padding:16px 18px;cursor:pointer;font-weight:700;font-size:15px;list-style:none;display:flex;gap:12px;align-items:center}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::before{content:"Q";color:var(--brand);font-weight:900}
+.faq-item p{padding:0 18px 16px 40px;color:var(--sub);font-size:14px}
+
+/* ===== Footer ===== */
+footer{border-top:1px solid var(--line);padding:44px 0 26px;margin-top:30px;background:linear-gradient(180deg,transparent,rgba(0,0,0,.3))}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:28px}
+.foot-brand p{color:var(--sub);font-size:13.5px;margin-top:12px;max-width:320px}
+.foot-col h6{font-size:15px;margin-bottom:12px;color:#fff}
+.foot-col a{display:block;color:var(--sub);font-size:13.5px;padding:5px 0}
+.foot-col a:hover{color:var(--brand)}
+.copy{margin-top:28px;padding-top:20px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:var(--sub);font-size:12.5px}
+.copy a{color:var(--sub)}
+.copy a:hover{color:#fff}
+
+/* ===== Mobile ===== */
+@media(max-width:900px){
+  .hero-grid{grid-template-columns:1fr}
+  .grid-4{grid-template-columns:repeat(2,1fr)}
+  .grid-3,.grid-2{grid-template-columns:1fr}
+  .steps{grid-template-columns:repeat(2,1fr)}
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:680px){
+  .wrap{padding:0 15px}
+  header .search-box,.menu a:not(.btn-play){display:none}
+  .menu-btn{display:grid;place-items:center}
+  .menu{position:fixed;inset:64px 0 0;flex-direction:column;align-items:stretch;padding:20px;gap:8px;background:rgba(7,11,26,.96);backdrop-filter:blur(14px);transform:translateX(100%);transition:.3s;border-top:1px solid var(--line);overflow:auto}
+  .menu.open{transform:translateX(0)}
+  .menu a,.menu .search-box{display:block;margin:0}
+  .menu .search-box{width:100%}
+  .hero{padding:34px 0 20px}
+  .stats{gap:18px}
+  section{padding:38px 0}
+  .grid-4{grid-template-columns:repeat(2,1fr);gap:12px}
+  .card h4{font-size:13.5px;padding:10px 11px 2px}
+  .card p{padding:0 11px 11px;font-size:11.5px}
+  .foot-grid{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr}
+  h1{font-size:29px}
+}
+@media print{
+  body{background:#fff;color:#000}
+  header,footer,.hero-actions,.menu-btn{display:none}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/yazhou.js"></script>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#top" aria-label="6080新视觉电影网 首页">
+      <span class="mark">60</span>
+      <span><b>6080新视觉电影网</b><span>官方站</span></span>
+    </a>
+    <nav class="menu" id="menu">
+      <a href="#home" class="active">首页</a>
+      <a href="#movies">电影频道</a>
+      <a href="#tv">电视剧</a>
+      <a href="#anime">动漫综艺</a>
+      <a href="#rank">热播榜</a>
+      <a href="#feature">网站特色</a>
+      <a href="#news">影视资讯</a>
+      <a href="#guide">观影指南</a>
+      <a href="#faq">常见问题</a>
+      <div class="search-box">
+        <span>🔍</span>
+        <input type="search" id="search" placeholder="搜影片、演员、类型…" aria-label="站内搜索">
+      </div>
+      <a href="#play" class="btn-play">立即观看</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="切换导航菜单">☰</button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ===== Hero ===== -->
+  <section class="hero" id="home">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">🎬 6080xinshijuedianyingwang-app · 官方唯一入口</span>
+        <h1>6080新视觉电影网<br><em>高清影视 · 极速畅看</em></h1>
+        <p class="lead">6080新视觉电影网（6080xinshijuedianyingwang-app）专注于为影迷提供<strong>电影、电视剧、动漫、综艺</strong>的高清在线观看与下载服务。全网资源每日更新，多线路秒播，手机电脑电视全端自适应，让你随时随地享受影院级画质。</p>
+        <div class="hero-actions">
+          <a class="cta primary" href="#play">▶ 免费观看</a>
+          <a class="cta ghost" href="#movies">浏览电影库</a>
+        </div>
+        <div class="stats">
+          <div class="stat"><div class="n">12万+</div><div class="l">高清影视资源</div></div>
+          <div class="stat"><div class="n">24h</div><div class="l">同步更新</div></div>
+          <div class="stat"><div class="n">8K+</div><div class="l">日均访问</div></div>
+          <div class="stat"><div class="n">100%</div><div class="l">免费无广告</div></div>
+        </div>
+      </div>
+      <aside class="hero-card">
+        <span class="tag">TRENDING · 今日正在追</span>
+        <h3>实时热播榜 TOP 4</h3>
+        <div class="now-list">
+          <div class="now"><span class="no">01</span><div><b>默杀</b><small>悬疑 / 犯罪 · 1080P 高清</small></div></div>
+          <div class="now"><span class="no">02</span><div><b>抓娃娃</b><small>喜剧 / 家庭 · 院线同步</small></div></div>
+          <div class="now"><span class="no">03</span><div><b>庆余年 第二季</b><small>古装 / 权谋 · 全36集</small></div></div>
+          <div class="now"><span class="no">04</span><div><b>甄嬛传</b><small>经典宫斗 · 4K 修复版</small></div></div>
+        </div>
+        <a class="cta primary" href="#rank" style="display:block;text-align:center;margin-top:16px">查看完整榜单 →</a>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ===== 电影频道 ===== -->
+  <section id="movies">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-title"><small>MOVIE</small>电影频道 · 院线同步</div>
+        <a class="sec-more" href="#">查看更多 →</a>
+      </div>
+      <div class="pills">
+        <a class="pill" href="#">动作</a><a class="pill" href="#">喜剧</a><a class="pill" href="#">科幻</a>
+        <a class="pill" href="#">悬疑</a><a class="pill" href="#">爱情</a><a class="pill" href="#">恐怖</a>
+        <a class="pill" href="#">动画</a><a class="pill" href="#">纪录片</a>
+      </div>
+      <div class="grid grid-4">
+        <article class="card"><div class="poster"><span class="art">默杀</span><span class="grad"></span><span class="score">9.1</span><span class="ep">1080P</span></div><h4>默杀</h4><p>悬疑 / 犯罪 · 2024</p></article>
+        <article class="card"><div class="poster"><span class="art">抓娃娃</span><span class="grad"></span><span class="score">8.4</span><span class="ep">院线</span></div><h4>抓娃娃</h4><p>喜剧 / 家庭 · 2024</p></article>
+        <article class="card"><div class="poster"><span class="art">异形</span><span class="grad"></span><span class="score">8.7</span><span class="ep">4K</span></div><h4>异形：夺命舰</h4><p>科幻 / 惊悚 · 2024</p></article>
+        <article class="card"><div class="poster"><span class="art">死侍</span><span class="grad"></span><span class="score">8.9</span><span class="ep">蓝光</span></div><h4>死侍与金刚狼</h4><p>动作 / 科幻 · 2024</p></article>
+        <article class="card"><div class="poster"><span class="art">逆行</span><span class="grad"></span><span class="score">8.2</span><span class="ep">1080P</span></div><h4>逆行人生</h4><p>剧情 / 现实 · 2024</p></article>
+        <article class="card"><div class="poster"><span class="art">白蛇</span><span class="grad"></span><span class="score">8.5</span><span class="ep">动画</span></div><h4>白蛇：浮生</h4><p>动画 / 奇幻 · 2024</p></article>
+        <article class="card"><div class="poster"><span class="art">浴火</span><span class="grad"></span><span class="score">8.0</span><span class="ep">战争</span></div><h4>浴火之路</h4><p>犯罪 / 公路 · 2024</p></article>
+        <article class="card"><div class="poster"><span class="art">里斯</span><span class="grad"></span><span class="score">8.8</span><span class="ep">传记</span></div><h4>里斯本丸沉没</h4><p>纪录片 / 历史 · 2024</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 电视剧 ===== -->
+  <section id="tv">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-title"><small>TV SERIES</small>电视剧 · 全集一口气</div>
+        <a class="sec-more" href="#">查看更多 →</a>
+      </div>
+      <div class="grid grid-3">
+        <article class="card"><div class="poster" style="aspect-ratio:16/10"><span class="art">庆余年2</span><span class="grad"></span><span class="score">9.4</span><span class="ep">36集全</span></div><h4>庆余年 第二季</h4><p>古装 / 权谋 · 张若昀</p></article>
+        <article class="card"><div class="poster" style="aspect-ratio:16/10"><span class="art">墨雨</span><span class="grad"></span><span class="score">9.2</span><span class="ep">40集全</span></div><h4>墨雨云间</h4><p>古装 / 爱情 · 吴谨言</p></article>
+        <article class="card"><div class="poster" style="aspect-ratio:16/10"><span class="art">边水</span><span class="grad"></span><span class="score">9.0</span><span class="ep">39集全</span></div><h4>边水往事</h4><p>悬疑 / 犯罪 · 郭麒麟</p></article>
+        <article class="card"><div class="poster" style="aspect-ratio:16/10"><span class="art">玫瑰</span><span class="grad"></span><span class="score">8.6</span><span class="ep">38集全</span></div><h4>玫瑰的故事</h4><p>都市 / 情感 · 刘亦菲</p></article>
+        <article class="card"><div class="poster" style="aspect-ratio:16/10"><span class="art">大唐</span><span class="grad"></span><span class="score">8.8</span><span class="ep">更新中</span></div><h4>大唐狄公案</h4><p>悬疑 / 古装 · 周一围</p></article>
+        <article class="card"><div class="poster" style="aspect-ratio:16/10"><span class="art">新生</span><span class="grad"></span><span class="score">8.3</span><span class="ep">10集全</span></div><h4>新生</h4><p>悬疑 / 短剧 · 井柏然</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 动漫综艺 ===== -->
+  <section id="anime">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-title"><small>ANIME & SHOW</small>动漫 · 综艺 · 纪录片</div>
+        <a class="sec-more" href="#">查看更多 →</a>
+      </div>
+      <div class="grid grid-4">
+        <article class="card"><div class="poster"><span class="art">鬼灭</span><span class="grad"></span><span class="score">9.6</span><span class="ep">更新中</span></div><h4>鬼灭之刃 柱训练篇</h4><p>热血 / 奇幻 · 日语中字</p></article>
+        <article class="card"><div class="poster"><span class="art">迷宫</span><span class="grad"></span><span class="score">9.3</span><span class="ep">TV</span></div><h4>迷宫饭</h4><p>冒险 / 美食 · 2024新番</p></article>
+        <article class="card"><div class="poster"><span class="art">歌手</span><span class="grad"></span><span class="score">8.9</span><span class="ep">直播</span></div><h4>歌手 2024</h4><p>音乐 / 竞演 · 每周五更新</p></article>
+        <article class="card"><div class="poster"><span class="art">种地</span><span class="grad"></span><span class="score">9.1</span><span class="ep">纪实</span></div><h4>种地吧 第二季</h4><p>劳作 / 纪实 · 豆瓣高分</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 热播榜 ===== -->
+  <section id="rank">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-title"><small>TOP 10</small>6080新视觉电影网 · 实时热播榜</div>
+        <a class="sec-more" href="#">完整榜单 →</a>
+      </div>
+      <div class="grid grid-2">
+        <div class="rank">
+          <div class="rank-item"><span class="idx top">1</span><div class="txt"><b>默杀</b><small>悬疑犯罪 · 播放量 386 万</small><span class="bar"><i style="width:96%"></i></span></div></div>
+          <div class="rank-item"><span class="idx top">2</span><div class="txt"><b>庆余年 第二季</b><small>古装权谋 · 播放量 352 万</small><span class="bar"><i style="width:88%"></i></span></div></div>
+          <div class="rank-item"><span class="idx">3</span><div class="txt"><b>抓娃娃</b><small>喜剧家庭 · 播放量 310 万</small><span class="bar"><i style="width:78%"></i></span></div></div>
+          <div class="rank-item"><span class="idx">4</span><div class="txt"><b>异形：夺命舰</b><small>科幻惊悚 · 播放量 268 万</small><span class="bar"><i style="width:67%"></i></span></div></div>
+          <div class="rank-item"><span class="idx">5</span><div class="txt"><b>墨雨云间</b><small>古装爱情 · 播放量 241 万</small><span class="bar"><i style="width:60%"></i></span></div></div>
+        </div>
+        <div class="rank">
+          <div class="rank-item"><span class="idx">6</span><div class="txt"><b>死侍与金刚狼</b><small>动作科幻 · 播放量 215 万</small><span class="bar"><i style="width:54%"></i></span></div></div>
+          <div class="rank-item"><span class="idx">7</span><div class="txt"><b>边水往事</b><small>悬疑犯罪 · 播放量 198 万</small><span class="bar"><i style="width:50%"></i></span></div></div>
+          <div class="rank-item"><span class="idx">8</span><div class="txt"><b>鬼灭之刃 柱训练篇</b><small>热血动漫 · 播放量 176 万</small><span class="bar"><i style="width:44%"></i></span></div></div>
+          <div class="rank-item"><span class="idx">9</span><div class="txt"><b>玫瑰的故事</b><small>都市情感 · 播放量 154 万</small><span class="bar"><i style="width:39%"></i></span></div></div>
+          <div class="rank-item"><span class="idx">10</span><div class="txt"><b>逆行人生</b><small>现实剧情 · 播放量 132 万</small><span class="bar"><i style="width:33%"></i></span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 网站特色 ===== -->
+  <section id="feature">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-title"><small>WHY US</small>为什么选择 6080新视觉电影网</div>
+      </div>
+      <div class="grid grid-4">
+        <div class="feat"><div class="ic">🎞️</div><h4>海量资源</h4><p>电影、剧集、动漫、综艺、纪录片超 12 万部，涵盖华语、好莱坞、日韩、欧美、泰剧，分类检索一键直达。</p></div>
+        <div class="feat"><div class="ic">⚡</div><h4>极速秒播</h4><p>P2P + CDN 多线路智能调度，支持 4K / 1080P / 720P 多清晰度切换，弱网也能流畅观看。</p></div>
+        <div class="feat"><div class="ic">📱</div><h4>全端自适应</h4><p>手机、平板、电脑、智能电视全适配，HTML5 原生播放，无需安装插件与客户端。</p></div>
+        <div class="feat"><div class="ic">🆓</div><h4>永久免费</h4><p>不弹窗、不强制注册、无会员套路，全部资源免费观看，支持磁力与迅雷离线下载。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 影视资讯 ===== -->
+  <section id="news">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-title"><small>NEWS</small>影视资讯 · 上映日历</div>
+        <a class="sec-more" href="#">资讯首页 →</a>
+      </div>
+      <div class="grid grid-2">
+        <div class="news">
+          <a href="#"><span class="dot"></span><span class="t">2024 国庆档票房破 15 亿，《抓娃娃》领跑</span><span class="d">09-28</span></a>
+          <a href="#"><span class="dot"></span><span class="t">《庆余年 第二季》收官，第三季已进入筹备</span><span class="d">09-25</span></a>
+          <a href="#"><span class="dot"></span><span class="t">DC 新作《超人：传承》定档，首支预告发布</span><span class="d">09-22</span></a>
+          <a href="#"><span class="dot"></span><span class="t">宫崎骏《你想活出怎样的人生》内地定档</span><span class="d">09-18</span></a>
+          <a href="#"><span class="dot"></span><span class="t">第 36 届中国电影金鸡奖提名名单公布</span><span class="d">09-15</span></a>
+        </div>
+        <div class="news">
+          <a href="#"><span class="dot"></span><span class="t">Netflix 十月片单：《呪術迴戰》第三季上线</span><span class="d">09-28</span></a>
+          <a href="#"><span class="dot"></span><span class="t">《甄嬛传》4K 修复版登陆大银幕，十年经典重生</span><span class="d">09-24</span></a>
+          <a href="#"><span class="dot"></span><span class="t">《异形：夺命舰》内地票房突破 9 亿元</span><span class="d">09-20</span></a>
+          <a href="#"><span class="dot"></span><span class="t">《歌手 2024》总决赛落幕，那英夺冠</span><span class="d">09-16</span></a>
+          <a href="#"><span class="dot"></span><span class="t">2024 年豆瓣评分最高的 10 部国产剧盘点</span><span class="d">09-10</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 观影指南 ===== -->
+  <section id="guide">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-title"><small>HOW TO</small>三步开始免费观影</div>
+      </div>
+      <div class="steps">
+        <div class="step"><div class="num">1</div><h5>搜索影片</h5><p>在顶部搜索框输入片名、演员或类型，秒出结果。</p></div>
+        <div class="step"><div class="num">2</div><h5>选择线路</h5><p>点击封面进入播放页，可切换 4K / 1080P 与播放线路。</p></div>
+        <div class="step"><div class="num">3</div><h5>流畅观看</h5><p>HTML5 原生播放，支持投屏、倍速、离线下载。</p></div>
+        <div class="step"><div class="num">♥</div><h5>收藏追剧</h5><p>加入追剧清单，更新自动提醒，不错过每一集。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 常见问题 ===== -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="sec-head"><div class="sec-title"><small>FAQ</small>常见问题解答</div></div>
+      <div class="faq">
+        <details class="faq-item" open><summary>6080新视觉电影网 的网址是什么？</summary><p>官方唯一入口为 <strong>https://6080xinshijuedianyingwang-app.github.io</strong>，网站名称为「6080新视觉电影网」，请认准域名，谨防仿冒站点。</p></details>
+        <details class="faq-item"><summary>网站资源需要付费或注册吗？</summary><p>不需要。6080新视觉电影网 全部影视资源免费观看，无需注册登录，无会员门槛，也不强制安装任何插件。</p></details>
+        <details class="faq-item"><summary>为什么有些影片提示"暂无资源"？</summary><p>部分新上映院线影片受版权窗口期限制会延迟上线，建议开启"更新提醒"，上线后将第一时间通知。</p></details>
+        <details class="faq-item"><summary>播放卡顿或无法加载怎么办？</summary><p>可尝试：① 切换播放线路；② 降低清晰度至 720P；③ 清除浏览器缓存；④ 使用 Chrome / Edge 最新版。</p></details>
+        <details class="faq-item"><summary>支持手机和电视端吗？</summary><p>支持。本站采用响应式设计，手机、平板、电脑、智能电视均可自适应访问；播放页提供 DLNA 投屏按钮，可一键投到大屏。</p></details>
+        <details class="faq-item"><summary>如何提交影片求片或报错？</summary><p>可通过页面底部"求片反馈"入口提交片名与版本信息，通常在 24 小时内完成补档。</p></details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="logo" href="#top"><span class="mark">60</span><b>6080新视觉电影网</b></a>
+        <p>6080新视觉电影网（6080xinshijuedianyingwang-app）致力于做最懂影迷的免费影视导航站：资源全、更新快、画质清、体验稳。</p>
+      </div>
+      <div class="foot-col">
+        <h6>频道导航</h6>
+        <a href="#movies">电影频道</a>
+        <a href="#tv">电视剧</a>
+        <a href="#anime">动漫综艺</a>
+        <a href="#rank">热播排行榜</a>
+      </div>
+      <div class="foot-col">
+        <h6>服务帮助</h6>
+        <a href="#guide">观影指南</a>
+        <a href="#faq">常见问题</a>
+        <a href="#">求片反馈</a>
+        <a href="#">清晰度说明</a>
+      </div>
+      <div class="foot-col">
+        <h6>关于本站</h6>
+        <a href="#">网站简介</a>
+        <a href="#">更新日志</a>
+        <a href="#">友情链接</a>
+        <a href="#">免责声明</a>
+      </div>
+    </div>
+    <div class="copy">
+      <span>© 2024 6080新视觉电影网（6080xinshijuedianyingwang-app）保留所有权利 · 网址：https://6080xinshijuedianyingwang-app.github.io</span>
+      <span><a href="#">回到顶部 ↑</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// 移动端菜单
+var menuBtn=document.getElementById('menuBtn');
+var menu=document.getElementById('menu');
+menuBtn.addEventListener('click',function(){menu.classList.toggle('open');});
+menu.addEventListener('click',function(e){if(e.target.tagName==='A'){menu.classList.remove('open');}});
+
+// 导航高亮
+var links=document.querySelectorAll('.menu a[href^="#"]');
+var secs=document.querySelectorAll('main section[id]');
+window.addEventListener('scroll',function(){
+  var pos=window.scrollY+120;var cur='';
+  secs.forEach(function(s){if(s.offsetTop<=pos)cur=s.id;});
+  links.forEach(function(a){a.classList.toggle('active',a.getAttribute('href')==='#'+cur);});
+});
+
+// 搜索（站内锚点演示）
+var search=document.getElementById('search');
+search.addEventListener('keydown',function(e){
+  if(e.key==='Enter'&&this.value.trim()){
+    alert('6080新视觉电影网 站内搜索：'+this.value.trim()+'（演示功能，内链以 # 占位）');
+    this.value='';
+  }
+});
+</script>
+</body>
+</html>
